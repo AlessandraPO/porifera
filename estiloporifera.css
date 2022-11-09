@@ -106,8 +106,7 @@ figure {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
-  height: auto;
+  width: 80%;
   font-size: 10;
 }
 
@@ -117,5 +116,5 @@ figure {
 }
 
 .foto_autoria {
-	width:400px;
+	width: 275px;
 }
