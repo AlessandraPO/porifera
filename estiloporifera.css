@@ -31,6 +31,7 @@ nav ul {
     display: flex;
     flex-wrap: wrap;
 	justify-content: space-around;
+	padding: 0;
 }
 
 /* submenu escondido */
@@ -116,7 +117,7 @@ figure {
 }
 
 .foto_autoria {
-	width:30%;
-	min-width: 275px;
+	width:50%;
+	min-width: 300px;
 	height: auto;
 }
