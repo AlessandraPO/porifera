@@ -6,7 +6,7 @@
 	<title>PORIFERA</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="estilo3.css">	
+	<link rel="stylesheet" href="estiloporifera.css">	
 </head>
 
 <body>
@@ -15,53 +15,34 @@
 	</header>
 
 	<main>
-
 		<nav>
 			<ul>
-				<li><a href="introducao.html" target="conteudo">ÍNICIO</a>
-				<li>ESTRUTURA
-					<ul>
-						<li><a href="#" target="_blank">Parede corporal</a></li>
-						<li><a href="#" target="_blank">Meso-hilo</a></li>
-						<li><a href="#" target="_blank">Coanoderme</a></li>
-						<li><a href="#" target="_blank">Tipos celulares</a></li>
-					</ul>
-				</li>
-				<li>MORFOLOGIA
-					<ul>
-						<li><a href="asconoide1.html" target="conteudo">Asconoide</a></li>
-						<li><a href="#" target="_blank">Siconoide</a></li>
-						<li><a href="#" target="_blank">Leuconoide</a></li>
-					</ul>
-				</li>
-				<li>FISIOLOGIA
-					<ul>
-						<li><a href="#" target="_blank">Digestão</a></li>
-						<li><a href="#" target="_blank">Respiração</a></li>
-						<li><a href="#" target="_blank">Excreção</a></li>
-						<li><a href="#" target="_blank">Reprodução</a></li>
-					</ul>
-				</li>
-				<li>CLASSES
-					<ul>
-						<li><a href="#" target="_blank">Calcárea</a></li>
-						<li><a href="#" target="_blank">Demonspogiae</a></li>
-						<li><a href="#" target="_blank">Hexactinellida</a></li>
-						<li><a href="#" target="_blank">Sclerospongiae</a></li>
-					</ul>
-				</li>
+				<li><a href="introducao.html" target="conteudo">ÍNICIO</a></li>
+				<li><a href="estrutura.html" target="conteudo">ESTRUTURA</a></li>
+				<li><a href="morfologia.html" target="conteudo">MORFOLOGIA</a></li>
+				<li><a href="fisiologia.html" target="conteudo">FISIOLOGIA</a></li>
+				<li><a href="classes.html" target="conteudo">CLASSES</a></li>
+				<li><a href="jogo.html" target="conteudo">JOGO</a></li>
 			</ul>
 		</nav>
 
-
 		<iframe src="introducao.html" name="conteudo" scrolling="no"></iframe>
-
+	
 	</main>
 
 	<footer>
 		<p>Se você gostou do conteúdo, compartilhe com um amigo!</p>
 		<p>© Desenvolvido por Alessandra Oliveira</p>
 	</footer>
+
+	<script>
+		let iframe = document.querySelector("iframe");
+
+		iframe.addEventListener('load', function() {
+			iframe.style.height = iframe.contentDocument.body.scrollHeight + 'px';
+			iframe.style.width = iframe.contentDocument.body.scrollWidth + 'px';
+		});	
+	</script>
 
 </body>
 </html>
