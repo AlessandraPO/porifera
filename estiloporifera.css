@@ -1,3 +1,5 @@
+@import url('https://fonts.cdnfonts.com/css/century-gothic');
+
 * {
   box-sizing: border-box;
 }
@@ -111,4 +113,10 @@ figure {
 .introducao-div {
 	line-height: 2;
 	text-indent: 2cm;
+}
+
+.foto_autoria {
+	width:30%;
+	min-width: 275px;
+	height: auto;
 }
