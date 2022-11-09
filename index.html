@@ -17,12 +17,12 @@
 	<main>
 		<nav>
 			<ul>
-				<li><a href="introducao.html" target="conteudo">ÍNICIO</a></li>
-				<li><a href="estrutura.html" target="conteudo">ESTRUTURA</a></li>
-				<li><a href="morfologia.html" target="conteudo">MORFOLOGIA</a></li>
-				<li><a href="fisiologia.html" target="conteudo">FISIOLOGIA</a></li>
-				<li><a href="classes.html" target="conteudo">CLASSES</a></li>
-				<li><a href="jogo.html" target="conteudo">JOGO</a></li>
+				<li><a href="introducao.html" target="conteudo" onclick="regular_altura(2000)">ÍNICIO</a></li>
+				<li><a href="estrutura.html" target="conteudo" onclick="regular_altura(1000)">ESTRUTURA</a></li>
+				<li><a href="morfologia.html" target="conteudo" onclick="regular_altura(1000)">MORFOLOGIA</a></li>
+				<li><a href="fisiologia.html" target="conteudo" onclick="regular_altura(1000)">FISIOLOGIA</a></li>
+				<li><a href="classes.html" target="conteudo" onclick="regular_altura(1000)">CLASSES</a></li>
+				<li><a href="jogo.html" target="conteudo"onclick="regular_altura(1000)">JOGO</a></li>
 			</ul>
 		</nav>
 
@@ -37,11 +37,10 @@
 
 	<script>
 		let iframe = document.querySelector("iframe");
-
-		iframe.addEventListener('load', function() {
-			iframe.style.height = iframe.contentDocument.body.scrollHeight + 'px';
-			iframe.style.width = iframe.contentDocument.body.scrollWidth + 'px';
-		});	
+		function regular_altura(altura) {
+			iframe.style.height = altura + 'px';
+		}
+		regular_altura(2000);
 	</script>
 
 </body>
