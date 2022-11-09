@@ -3,13 +3,13 @@
 }
 
 :root {
-	--cor1: purple;
-	--cor2: violet;
+	--cor1: #713CDE;
+	--cor2: #D5C5F6;
 	--cor3: white;
 }
 
 body {
-  font-family: century gothic;
+  font-family: Century Gothic;
 }
 
 header {
