@@ -120,3 +120,10 @@ figure {
 	min-width: 275px
 }
 
+.jogo {
+	text-decoration: none;
+	background-color: gray;
+	color: black;
+	border: 1px solid black;
+	padding: 5px;
+}
