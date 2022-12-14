@@ -3,45 +3,107 @@
 <html lang="pt-br">
 
 <head>
-	<title>PORIFERA</title>
+	<title>GAME OF IMUNE SYSTEM</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="estiloporifera.css">	
+	<link rel="stylesheet" href="estilojogo.css">
+	<script>
+		
+		let temporizador;
+
+		function novo_jogo() {
+			let pontuacao = document.querySelector("#pontuacao")
+			pontuacao.value = 0;
+			let bacterias = document.querySelectorAll('.bacteria');
+			for (let i = 0; i < bacterias.length; i++) {
+				bacterias[i].remove();
+			}
+			criar_bacterias(10);
+
+			clearInterval(temporizador);
+			temporizador = setInterval(function () {
+				let bacterias = document.querySelectorAll('.bacteria');
+				let contagem = bacterias.length;
+				/*cria bacterias com base no que sobrou*/
+				criar_bacterias(contagem);
+				bacterias = document.querySelectorAll('.bacteria');
+				if (bacterias.length >= 50){
+					alert("Game Over");
+					clearInterval(temporizador);
+				}
+			}, 3000);
+		}
+		
+		function criar_bacteria () {
+			const novaBacteria = document.createElement('img');
+			novaBacteria.classList.add('bacteria');
+			novaBacteria.src = "imagens/bacteria1.png";
+			novaBacteria.onclick = apagar_bacteria;
+			const novaTop = Math.floor(Math.random() * 425 + 100);
+			const novaLeft = Math.floor(Math.random() * 90 + 2);
+			novaBacteria.style.top = novaTop + 'px';
+			novaBacteria.style.left = novaLeft + '%';
+			const main = document.querySelector('main');
+			main.appendChild(novaBacteria);
+		}
+		
+		
+		function apagar_bacteria(evento) {
+			evento.target.remove();
+			let pontuacao = document.querySelector("#pontuacao")
+			pontuacao.value = parseInt(pontuacao.value) + 1;
+			let bacterias = document.querySelectorAll('.bacteria');
+			if (bacterias.length == 0) {
+				alert('Você ganhou!!!');
+			}
+			
+		}
+		/*	setInterval (function() {
+			criar_bacteria()}, 5000);
+			setTimeout(function () {
+			}, 1000)
+		*/
+	
+		function criar_bacterias(quantidade) {
+			// Executa "quantidade" de vezes a função criar_bacteria
+			for (let passo = 0; passo < quantidade; passo++) {
+				criar_bacteria();
+			}
+		}
+
+		
+		
+	</script>
 </head>
 
 <body>
 	<header>
-		<h2>PORIFERA</h2>
+		<h2>GAME OF IMUNE SYSTEM</h2>
 	</header>
 
-	<main>
-		<nav>
-			<ul>
-				<li><a href="introducao.html" target="conteudo" onclick="regular_altura(2000)">ÍNICIO</a></li>
-				<li><a href="estrutura.html" target="conteudo" onclick="regular_altura(1000)">ESTRUTURA</a></li>
-				<li><a href="morfologia.html" target="conteudo" onclick="regular_altura(1300)">MORFOLOGIA</a></li>
-				<li><a href="fisiologia.html" target="conteudo" onclick="regular_altura(2200)">FISIOLOGIA</a></li>
-				<li><a href="classes.html" target="conteudo" onclick="regular_altura(2000)">CLASSES</a></li>
-				<li><a href="jogo.html" target="conteudo"onclick="regular_altura(1000)">JOGO</a></li>
-			</ul>
-		</nav>
 
-		<iframe src="introducao.html" name="conteudo" scrolling="no"></iframe>
-	
+
+	<nav>
+		<label for="pontuacao">Pontuação</label>
+		<input type="number" id="pontuacao" value="0">
+		<button onclick="novo_jogo()">Novo jogo</button>
+		<input type="radio" name="defesa" id="antibiotico">
+		<label for="macrofago">Macrófago</label>
+		<input type="radio" name="defesa" id="macrofago">
+		<label for="antibiotico">Antibiótico</label>
+	</nav>
+
+	<main>
+				
+		<img id="cenario" src="imagens/cenario1.jpg">
+		
+		
 	</main>
 
 	<footer>
-		<p>Se você gostou do conteúdo, compartilhe com um amigo!</p>
 		<p>© Desenvolvido por Alessandra Oliveira</p>
 	</footer>
 
-	<script>
-		let iframe = document.querySelector("iframe");
-		function regular_altura(altura) {
-			iframe.style.height = altura + 'px';
-		}
-		regular_altura(2725);
-	</script>
 
 </body>
 </html>
